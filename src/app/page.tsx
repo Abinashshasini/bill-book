@@ -7,7 +7,8 @@ export default function Home({
 }) {
   /** Function to generate random number */
   const handleGenerateRandomNumber = () => {
-    return Math.floor(Math.random() * 9999) + 1;
+    const randomNum = Math.random() * 9000;
+    return Math.floor(1000 + randomNum);
   };
 
   return (
