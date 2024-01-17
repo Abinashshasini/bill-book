@@ -13,7 +13,16 @@ export default function Home({
 
   return (
     <main className="main">
-      {Array(Number(searchParams?.billCount) || 2)
+      <select onMouseLeave={() => {
+        alert('mouse left')
+      }}
+      >
+        <option>help</option>
+        <option>me</option>
+        <option>complete</option>
+        <option>this</option>
+      </select>
+      {/* {Array(Number(searchParams?.billCount) || 2)
         .fill(0)
         .map((element, index) => (
           <div className="wraper" key={index}>
@@ -83,7 +92,7 @@ export default function Home({
               <p>Signature</p>
             </div>
           </div>
-        ))}
+        ))} */}
     </main>
   );
 }
