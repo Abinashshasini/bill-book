@@ -1,4 +1,7 @@
-'use client'
+'use client';
+
+import { useEffect, useState } from 'react';
+
 export default function Home({
   params,
   searchParams,
@@ -12,12 +15,27 @@ export default function Home({
     return Math.floor(1000 + randomNum);
   };
 
+  const [state, setState] = useState(false);
+
+  const handleMouseEnter = () => {
+    setState(true);
+  };
+
+  const handleMouseLeave = () => {
+    setState(false);
+  };
+
+  useEffect(() => {
+    const _select = document.getElementById('_select');
+    _select?.addEventListener('mouseleave', () => {
+      alert('mouse left');
+    });
+    console.log('baklol', _select);
+  }, []);
+
   return (
     <main className="main">
-      <select onMouseLeave={() => {
-        alert('mouse left')
-      }}
-      >
+      <select id="_select">
         <option>help</option>
         <option>me</option>
         <option>complete</option>
