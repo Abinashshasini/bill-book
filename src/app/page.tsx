@@ -17,25 +17,30 @@ export default function Home({
 
   const [state, setState] = useState(false);
 
-  const handleMouseEnter = () => {
-    setState(true);
-  };
-
-  const handleMouseLeave = () => {
-    setState(false);
+  const handleBlur = () => {
+    setTimeout(() => {
+      if (!state) {
+        alert('closed');
+      }
+    }, 200);
   };
 
   useEffect(() => {
-    const _select = document.getElementById('_select');
-    _select?.addEventListener('mouseleave', () => {
-      alert('mouse left');
-    });
-    console.log('baklol', _select);
+    // const _select = document.getElementById('_select');
+    // _select?.addEventListener('mousedown', () => {
+    //   alert('mouse left');
+    // });
+    // console.log('baklol', _select);
   }, []);
 
   return (
     <main className="main">
-      <select id="_select">
+      <select
+        id="_select"
+        onBlur={handleBlur}
+        onFocus={() => setState(true)}
+        onClick={() => setState(!state)}
+      >
         <option>help</option>
         <option>me</option>
         <option>complete</option>
