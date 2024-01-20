@@ -35,18 +35,7 @@ export default function Home({
 
   return (
     <main className="main">
-      <select
-        id="_select"
-        onBlur={handleBlur}
-        onFocus={() => setState(true)}
-        onClick={() => setState(!state)}
-      >
-        <option>help</option>
-        <option>me</option>
-        <option>complete</option>
-        <option>this</option>
-      </select>
-      {/* {Array(Number(searchParams?.billCount) || 2)
+      {Array(Number(searchParams?.billCount) || 2)
         .fill(0)
         .map((element, index) => (
           <div className="wraper" key={index}>
@@ -116,7 +105,7 @@ export default function Home({
               <p>Signature</p>
             </div>
           </div>
-        ))} */}
+        ))}
     </main>
   );
 }
